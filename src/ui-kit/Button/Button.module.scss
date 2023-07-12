@@ -1,0 +1,238 @@
+@import '../../assets/styles/mixins.scss';
+
+.root {
+  position: relative;
+  cursor: pointer;
+  font-family: 'Roboto Condensed', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 12px;
+  padding: 8px 12px;
+  transition: transform 0.2s;
+  white-space: nowrap;
+
+  &:not(.disabled) {
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &.loading,
+  &.disabled {
+    pointer-events: none;
+  }
+
+  &.small {
+    min-height: 24px;
+    padding: 0 8px;
+    font-size: 12px;
+    line-height: 14px;
+
+    @include mq(m) {
+      font-size: 16px;
+    }
+  }
+}
+
+.text {
+  color: #676f87;
+  border-radius: 20px;
+
+  &:hover,
+  &:focus {
+    background: rgba(233, 236, 244, 0.4);
+    outline: 1px solid #e9ecf4;
+  }
+
+  &.active,
+  &:active {
+    color: #1c1f2c;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+.purple {
+  color: #ffffff;
+  background: linear-gradient(130.56deg, #a3a5ff 15.58%, #153ad4 88.32%);
+  box-shadow: 0 3px 12px rgba(108, 123, 239, 0.3);
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+      ),
+      linear-gradient(130.56deg, #a3a5ff 15.58%, #153ad4 88.32%);
+    box-shadow: 0 3px 30px rgba(108, 123, 239, 0.6);
+  }
+
+  &.active,
+  &:active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+      linear-gradient(130.56deg, #a3a5ff 15.58%, #153ad4 88.32%);
+  }
+
+  &.disabled {
+    background: rgba(137, 146, 173, 0.7);
+    color: rgba(#ffffff, 0.5);
+    box-shadow: unset;
+
+    svg,
+    path,
+    img {
+      opacity: 0.5;
+    }
+  }
+}
+
+.purple-outline {
+  color: #1862dc;
+  border: 1px solid #6c6df0;
+
+  &:hover,
+  &:focus {
+    background: rgba(24, 98, 220, 0.1);
+  }
+
+  &.active,
+  &:active {
+    background: rgba(24, 98, 220, 0.2);
+  }
+}
+
+.red-outline {
+  color: #e52e6b;
+  border: 1px solid #e52e6b;
+
+  &:hover,
+  &:focus {
+    background: rgba(229, 46, 107, 0.1);
+  }
+
+  &.active,
+  &:active {
+    background: rgba(229, 46, 107, 0.2);
+  }
+}
+
+.purple-outline,
+.purple-outline-gradient,
+.red-outline {
+  &.disabled {
+    background: rgba(173, 179, 198, 0.5);
+    border: 1px solid #adb3c6;
+    color: #adb3c6;
+
+    * {
+      opacity: 0.5;
+    }
+  }
+}
+
+.link {
+  font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
+  font-weight: 400;
+  line-height: 19px;
+  border-radius: 20px;
+  padding: 3px 6px;
+  min-height: auto;
+  color: #1862dc;
+
+  &:hover,
+  &:focus {
+    background: rgba(24, 98, 220, 0.1);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+.purple-outline-gradient {
+  position: relative;
+  color: #1862dc;
+
+  &:hover,
+  &:focus {
+    background: rgba(24, 98, 220, 0.1);
+  }
+
+  &.active,
+  &:active {
+    background: rgba(24, 98, 220, 0.2);
+  }
+
+  &:not(.disabled) {
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(258.83deg, #1862dc 0%, #aa76ff 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+  }
+}
+
+.green {
+  color: #4dcb7f;
+  background: #e8f8ee;
+  border: 1px solid rgba(77, 203, 127, 0.4);
+
+  &:hover,
+  &:focus {
+    background: #c9efd7;
+  }
+
+  &.active,
+  &:active {
+    background: #abe6c1;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+.grey {
+  color: #676f87;
+  background: #f6f7fa;
+  border: 1px solid #e9ecf4;
+
+  &:hover,
+  &:focus {
+    background: #ccced7;
+    border: 1px solid #676f87;
+  }
+
+  &.active,
+  &:active {
+    background: #b6b9c6;
+    border: 1px solid #676f87;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+.transparent {
+  color: #676f87;
+  background: transparent;
+}
