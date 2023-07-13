@@ -9,7 +9,7 @@ export const useLoginForm = () => {
   const loginRoleRedirect = useLoginRoleRedirect();
   const authTokenMutation = useAuthTokenMutation();
   const schema = yup.object({
-    email: yup.string().required('forms.auth.errors.no_email_error'),
+    login: yup.string().required('forms.auth.errors.no_email_error'),
     password: yup
       .string()
       .required('forms.auth.errors.no_password_error')

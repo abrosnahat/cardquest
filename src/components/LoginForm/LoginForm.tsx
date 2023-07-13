@@ -1,8 +1,8 @@
 import React from 'react';
 import { getFormError } from '../../utils/validations';
-import { Input } from '../../ui-kit/Input';
-import { FormField } from '../FormField';
-import { AuthForm, AuthFormProps } from '../AuthForm';
+import { Input } from '../../ui-kit/Input/Input';
+import { FormField } from '../FormField/FormField';
+import { AuthForm, AuthFormProps } from '../AuthForm/AuthForm';
 import { useLoginForm } from '../../hooks/useLoginForm';
 
 interface LoginFormProps extends Partial<AuthFormProps> {}
@@ -21,8 +21,8 @@ export const LoginForm: React.FC<LoginFormProps> = ({ actions }) => {
     >
       <FormField label={'pages.home.email'}>
         <Input
-          {...login.form.register('email')}
-          error={getFormError(login.form.formState, 'email')}
+          {...login.form.register('login')}
+          error={getFormError(login.form.formState, 'login')}
         />
       </FormField>
       <FormField label={'pages.home.password'}>

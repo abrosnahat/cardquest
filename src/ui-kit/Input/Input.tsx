@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import React, { SyntheticEvent } from 'react';
 import styles from './Input.module.scss';
-import { TextField, TextFieldProps } from '../TextField';
+import { TextField, TextFieldProps } from '../TextField/TextField';
 
 export interface InputPropsBase {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;

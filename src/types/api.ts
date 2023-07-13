@@ -9,3 +9,5 @@ export interface ReactQueryOptions {
     refetchOnWindowFocus?: boolean;
   };
 }
+
+export type IDType = number | string;

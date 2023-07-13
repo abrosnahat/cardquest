@@ -2,7 +2,7 @@ import cn from 'classnames';
 import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
-import { Loader } from '../Loader';
+import { Loader } from '../Loader/Loader';
 
 export interface ButtonProps {
   children?: ReactNode;

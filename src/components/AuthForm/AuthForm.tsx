@@ -2,10 +2,10 @@ import cn from 'classnames';
 import React, { FormEventHandler, Ref } from 'react';
 import { Navigate } from 'react-router-dom';
 import styles from './AuthForm.module.scss';
-import { Button, ButtonProps } from '../../ui-kit/Button';
+import { Button, ButtonProps } from '../../ui-kit/Button/Button';
 import { useCurrentUser } from '../../hooks/useCurrentUser';
 import { PAGES_CONFIG } from '../../constants/pages';
-import { ErrorPre } from '../ErrorPre';
+import { ErrorPre } from '../ErrorPre/ErrorPre';
 
 export interface AuthFormProps {
   children?: React.ReactNode;

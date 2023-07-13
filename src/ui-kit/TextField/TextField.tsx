@@ -2,7 +2,7 @@ import cn from 'classnames';
 import React from 'react';
 import ErrorIcon from './img/error.svg';
 import styles from './TextField.module.scss';
-import { ErrorPre } from '../../components/ErrorPre';
+import { ErrorPre } from '../../components/ErrorPre/ErrorPre';
 
 export interface TextFieldProps {
   children: React.ReactNode;
