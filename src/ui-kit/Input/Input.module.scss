@@ -1,0 +1,8 @@
+@import '../../assets/styles/mixins.scss';
+
+.input {
+  height: 38px;
+  padding: 7px 2px;
+
+  @include resetInput;
+}

@@ -1,0 +1,60 @@
+@import './media';
+
+@mixin fillSvg($color) {
+  svg,
+  rect,
+  path {
+    fill: $color;
+  }
+}
+
+@mixin desktop($breakPoint: m, $display: flex) {
+  display: none;
+
+  @include mq($breakPoint) {
+    display: $display;
+  }
+}
+
+@mixin mobile($breakPoint: m) {
+  display: flex;
+
+  @include mq($breakPoint) {
+    display: none;
+  }
+}
+
+@mixin resetInput {
+  width: inherit;
+  color: inherit;
+  font-weight: inherit;
+  background: transparent;
+
+  &::placeholder {
+    color: rgba(#adb3c6, 0.8);
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+}
+
+@mixin fullFeaturedLink() {
+  color: #1862dc;
+  text-decoration-line: underline;
+
+  &:visited {
+    color: #551a8b;
+  }
+}
+
+@mixin mq($breakpoint) {
+  @each $key, $val in $media {
+    @if $breakpoint==$key {
+      @media screen and (min-width: $val) {
+        @content;
+      }
+    }
+  }
+}
