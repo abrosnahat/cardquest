@@ -11,7 +11,7 @@ import { api } from '../utils/api';
 export const getUser = async () => {
   const { data } = await api.get<UserResponse>(`/user/profile/`);
 
-  return data;
+  return data.user;
 };
 
 export const generateAuthToken = async (user: LoginUserData) => {

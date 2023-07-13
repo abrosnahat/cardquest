@@ -1,0 +1,110 @@
+@import '../../../assets/styles/mixins.scss';
+
+.root {
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 14px;
+
+  @include mq(m) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.userEmail {
+  max-width: 150px;
+
+  @include textEllipsis;
+}
+
+.panelUser {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 21px;
+  background: #f6f7fa;
+  font-family: 'Roboto', sans-serif;
+}
+
+.panelEmail {
+  @include textEllipsis;
+}
+
+.panelAvatarWrapper {
+  height: 62px;
+  width: 62px;
+  padding: 3px;
+  border-radius: 50%;
+  background: rgba(24, 98, 220, 0.05);
+}
+
+.panelAvatarInner {
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.panelAvatar {
+  object-fit: cover;
+  object-position: center;
+  width: 56px;
+  height: 56px;
+}
+
+.panelUserBalance {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 85px;
+}
+
+.avatar {
+  object-fit: cover;
+  object-position: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.mobileAvatar {
+  object-fit: cover;
+  object-position: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+
+.panelListItem {
+  color: #676f87;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  &:not(:first-child) {
+    position: relative;
+
+    &::before {
+      @include itemPseudoDivider;
+    }
+  }
+}
+
+.panelListItemInner {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 21.5px 24px;
+}
+
+.panelListItemLink {
+  color: #676f87;
+}

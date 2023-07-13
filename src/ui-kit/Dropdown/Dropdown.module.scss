@@ -1,0 +1,137 @@
+@import '../../assets/styles/mixins.scss';
+
+.root {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+
+  &.panel {
+    padding: 12px;
+    gap: 8px;
+    background: #ffffff;
+    border-radius: 12px;
+    &.isOpen {
+      border-radius: 12px 12px 0 0;
+      filter: drop-shadow(0px 12px 12px rgba(204, 212, 237, 0.24));
+      box-shadow: 0 4px 12px -10px rgba(204, 212, 237, 0.5);
+
+      &.top {
+        border-radius: 0 0 12px 12px;
+      }
+    }
+  }
+
+  &.isOpen {
+    z-index: 2;
+  }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.list {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  z-index: 1;
+  overflow: hidden;
+
+  &.top {
+    top: auto;
+    bottom: 100%;
+  }
+
+  &.panel {
+    border-radius: 0 0 12px 12px;
+
+    &.top {
+      border-radius: 12px 12px 0 0;
+    }
+  }
+
+  &:not(.panel) {
+    filter: drop-shadow(0px 12px 12px rgba(204, 212, 237, 0.24));
+    box-shadow: 0 4px 12px -10px rgba(204, 212, 237, 0.5);
+  }
+}
+
+.itemWrapper:not(.hideFirstDivider) {
+  &:first-child .item.panel:not(.top)::after {
+    @include itemPseudoDivider;
+    top: 1px;
+  }
+
+  &:last-child .item.panel.top::after {
+    @include itemPseudoDivider;
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 12px;
+  line-height: 19px;
+
+  &::before {
+    @include itemPseudoDivider;
+  }
+
+  &.interactive {
+    &:hover {
+      background: #e9ecf4;
+
+      &::after,
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+
+  &.activeItem {
+    background-color: #e9ecf4;
+    font-weight: normal;
+    color: #676f87;
+
+    &::after,
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  &.top {
+    &::before {
+      top: auto;
+      bottom: -1px;
+    }
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.label {
+  @include textEllipsis;
+}
+
+.icon {
+  transition: 0.2s ease;
+  flex-shrink: 0;
+
+  &.isOpen {
+    transform: rotate(-180deg);
+  }
+}
