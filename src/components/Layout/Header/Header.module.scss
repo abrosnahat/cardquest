@@ -1,0 +1,54 @@
+@import '../../../assets/styles/mixins.scss';
+
+.root {
+  background-color: #ffffff;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+
+  @include layoutMaxWidth;
+
+  @include mq(m) {
+    padding: 0 24px;
+  }
+}
+
+.userWrapper {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+
+  @include mq(m) {
+    padding: 12px 0;
+  }
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.menuToggleMobile {
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.nav {
+  justify-self: flex-start;
+  padding-left: 32px;
+}
+
+.mobileLangIcon {
+  display: flex;
+  cursor: pointer;
+}

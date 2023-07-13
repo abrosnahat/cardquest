@@ -57,6 +57,7 @@
     "react-router-dom": "6.14.1",
     "resolve": "^1.20.0",
     "resolve-url-loader": "^4.0.0",
+    "rooks": "7.14.1",
     "sass-loader": "13.3.2",
     "semver": "^7.3.5",
     "source-map-loader": "^3.0.0",
